@@ -1,8 +1,8 @@
 <template>
-    <footer id="footer">
+    <div id="footer">
         <p>Monte Seu Hambúrguer &copy; 2022</p>
-        <p id="dev">Desenvolvido por <a href="#">Thaiane</a></p>
-    </footer>
+        <p>Desenvolvido por <a href="#">Thaiane</a></p>
+    </div>
 </template>
 
 <script>
@@ -12,29 +12,23 @@
 </script>
 
 <style scoped>
-    #footer{      
-        display: flex;
-        flex-flow: column wrap;
-        align-content: center;
-        justify-content: center;
-        position: absolute;
-        bottom:0;
-        width:100%;
+    #footer {
         height: 20vh;
-        margin: auto auto;
-        padding: 10px 5px;
-
-
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        bottom: 0;
+        width: 100%;
         text-align: center;
         color: #fff;
         background-color: #111;
     }
 
-    #dev{
-        margin-top: 1.5%;
+    p{
+        margin-left: 1%;
     }
 
-    a{
+    p a{
         color: #f1f1f1;
     }
 </style>
