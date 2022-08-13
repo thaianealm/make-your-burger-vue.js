@@ -10,6 +10,7 @@
                 <label for="bread">Escolha um tipo de pão:</label>
                 <select name="bread" id="bread" v-model="bread">
                     <option value="">Selecione o pão</option>
+                    <option v-for="bread in paes" :key="bread.id" :value="bread.tipo">{{ bread.tipo }}</option>
                 </select>
             </div>
 
@@ -17,14 +18,15 @@
                 <label for="meat">Escolha um tipo de carne:</label>
                 <select name="meat" id="meat" v-model="meat">
                     <option value="">Selecione a carne</option>
+                    <option v-for="meat in carnes" :key="meat.id" :value="meat.tipo">{{ meat.tipo }}</option>
                 </select>
             </div>
 
             <div class="input-container add-container">
-                <label for="add" class="add-title">Complementos:</label>
-                <div class="checkbox-container">
-                    <input type="checkbox" name="add" class="add">
-                    <span>Bacon</span>
+                <label for="opcionais" class="add-title">Complementos:</label>
+                <div class="checkbox-container" v-for="opcional in opcionaisdata" :key="opcional.id">
+                    <input class="add" type="checkbox" name="opcionais" v-model="opcionais" :value="opcional.tipo">
+                    <span>{{ opcional.tipo }}</span>
                 </div>
             </div>
 
@@ -38,6 +40,33 @@
 <script>
     export default{
         name: 'BurgerForm',
+        data(){
+            return{
+                paes: null,
+                carnes: null,
+                opcionaisdata: null,
+                name: null,
+                bread: null,
+                meat: null,
+                opcionais: [],
+                status: 'Solicitado',
+                msg: null
+            }
+        },
+        methods:{
+            async getIngredients(){
+
+                const req = await fetch('http://localhost:3000/ingredientes');
+                const data = await req.json();
+
+                this.paes = data.paes;
+                this.carnes = data.carnes;
+                this.opcionaisdata = data.opcionais;
+            }
+        },
+        mounted(){
+            this.getIngredients()
+        }
     }
 </script>
 
