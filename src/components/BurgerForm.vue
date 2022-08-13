@@ -103,13 +103,13 @@
         font-weight: 500;
     }
 
-    .submit-btn{
+    .input-container .submit-btn{
         -webkit-border-radius: 20px;
         -moz-border-radius: 20px;
         border-radius: 20px;
         color: #FFFFFF;
-        font-size: 20pt;
-        padding: 40px;
+        font-size: 18pt;
+        padding: 16px;
         background-color: #ee8700;
         text-decoration: none;
         cursor: pointer;
@@ -117,6 +117,7 @@
         border: none;
         width: 20rem;
         margin: 4% auto;
+        transition: all 0.4s ease-in-out;
     }
 
     .submit-btn:hover{
