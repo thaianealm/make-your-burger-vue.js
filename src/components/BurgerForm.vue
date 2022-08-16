@@ -1,6 +1,6 @@
 <template>
     <div>
-        <form id="buger-form">
+        <form id="burger-form" @submit.prevent="createBurger">
             <div class="input-container">
                 <label for="name">Nome:</label>
                 <input type="text" name="name" v-model="name" placeholder="Digite o seu nome">
@@ -49,7 +49,6 @@
                 bread: null,
                 meat: null,
                 opcionais: [],
-                status: 'Solicitado',
                 msg: null
             }
         },
@@ -62,6 +61,31 @@
                 this.paes = data.paes;
                 this.carnes = data.carnes;
                 this.opcionaisdata = data.opcionais;
+            },
+            async createBurger(){
+                const data = {
+                    name: this.name,
+                    bread: this.bread,
+                    meat: this.meat,
+                    //o elemento opcionais precisa ir como array, então precisamos criar um array
+                    opcionais: Array.from(this.opcionais), 
+                    status: 'Solicitado',
+                }
+                const dataJson = JSON.stringify(data);
+
+                const req = await fetch('http://localhost:3000/burgers',{
+                    method: 'POST',
+                    headers: { "Content-Type" : "application/json" },
+                    body: dataJson,
+                });
+
+                const res = await req.json();
+
+                //clear inputs
+                this.name = '';
+                this.bread = '';
+                this.meat = '';
+                this.opcionais = '';
             }
         },
         mounted(){
@@ -71,7 +95,7 @@
 </script>
 
 <style scoped>
-    #buger-form{
+    #burger-form{
         margin: 2% auto;
         max-width: 25rem;
     }

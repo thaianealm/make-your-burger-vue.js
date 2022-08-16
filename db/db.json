@@ -18,9 +18,9 @@
         "tipo": "Francês"
       },
       {
-          "id": 5,
-          "tipo": "Italiano Branco"
-        }
+        "id": 5,
+        "tipo": "Italiano Branco"
+      }
     ],
     "carnes": [
       {
@@ -81,5 +81,28 @@
       "tipo": "Finalizado"
     }
   ],
-  "burgers": []
+  "burgers": [
+    {
+      "name": "Niall",
+      "bread": "Tradicional",
+      "meat": "Alcatra",
+      "opcionais": [
+        "Bacon",
+        "Cheddar"
+      ],
+      "status": "Solicitado",
+      "id": 1
+    },
+    {
+      "name": "Lucy Haley",
+      "bread": "Tradicional",
+      "meat": "Alcatra",
+      "opcionais": [
+        "Bacon",
+        "Salame"
+      ],
+      "status": "Solicitado",
+      "id": 2
+    }
+  ]
 }
