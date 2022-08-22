@@ -11,15 +11,15 @@
             </div>
         </div>
          <div class="burger-table-rows">
-            <div class="burger-table-row">
-                <div class="order-number">1</div>
-                <div>Nome</div>
-                <div>Pão</div>
-                <div>Carne</div>
+            <div class="burger-table-row" v-for="burger in burgers" :key="burger.id">
+                <div class="order-number">{{ burger.id }}</div>
+                <div>{{ burger.name }}</div>
+                <div>{{ burger.bread }}</div>
+                <div>{{ burger.meat }}</div>
 
                 <div>
                     <ul>
-                        <li>Opcional</li>
+                        <li v-for="(opcional, index) in burger.opcionais" :key="index">{{ opcional }}</li>
                     </ul>
                 </div>
                 
@@ -37,6 +37,28 @@
 <script>
 export default{
     name: 'Dashboard',
+    data(){
+       return{
+        burgers: null,
+        burgers_id: null,
+        status: []
+       }
+    },
+    methods:{
+        async getRequests(){
+
+            const req = await fetch('http://localhost:3000/burgers')
+            const data = await req.json()
+            this.burgers = data
+        
+            // Redeem order status
+            this.getStatus()
+
+        }
+    },
+    mounted(){
+        this.getRequests();
+    }
 }
 </script>
 
