@@ -25,7 +25,8 @@
                 
                 <div>
                     <select name="status" class="status">
-                        <option value="">Staus</option>
+                        <option value="">Selecione</option>
+                        <option v-for="s in status" :key="s.id" value="s.tipo" :selected="burger.status == s.tipo">{{ s.tipo }}</option>
                     </select>
                     <button class="delete-btn">Cancelar</button>
                 </div>
@@ -54,7 +55,13 @@ export default{
             // Redeem order status
             this.getStatus()
 
-        }
+        },
+        async getStatus() {
+
+            const req = await fetch('http://localhost:3000/status')
+            const data = await req.json()
+            this.status = data
+      },
     },
     mounted(){
         this.getRequests();
@@ -64,7 +71,7 @@ export default{
 
 <style scoped>
  .burger-table {
-    max-width: 75rem;
+    max-width: 79rem;
     margin: 0 auto;
   }
   .burger-table-heading,
@@ -82,7 +89,7 @@ export default{
   }
   .burger-table-row {
     width: 100%;
-    padding: 25px;
+    padding: 24px;
     border-bottom: 1px solid #CCC;
 
     font-size: 14pt;
@@ -96,10 +103,10 @@ export default{
     width: 5%;
   }
   select {
-    padding: 12px 6px;
+    padding: 10px 5px;
     margin-right: 12px;
     border-radius: 6px;
-    font-size: 13pt;
+    font-size: 12pt;
   }
   .delete-btn {
     background-color: #ff0000;
@@ -107,7 +114,7 @@ export default{
     border: none;
     border-radius: 6px;
     padding: 12px;
-    font-size: 15pt;
+    font-size: 12pt;
     margin: 0 auto;
     cursor: pointer;
     transition: .5s;
