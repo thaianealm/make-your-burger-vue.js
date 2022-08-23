@@ -95,29 +95,6 @@
     },
     {
       "name": "Lucy Haley",
-      "bread": "Tradicional",
-      "meat": "Alcatra",
-      "opcionais": [
-        "Bacon",
-        "Salame"
-      ],
-      "status": "Solicitado",
-      "id": 2
-    },
-    {
-      "name": "Niall",
-      "bread": "Tradicional",
-      "meat": "Picanha",
-      "opcionais": [
-        "Bacon",
-        "Cheddar",
-        "Tomate"
-      ],
-      "status": "Solicitado",
-      "id": 3
-    },
-    {
-      "name": "Lucy Haley",
       "bread": "Integral",
       "meat": "Veggie burger",
       "opcionais": [
