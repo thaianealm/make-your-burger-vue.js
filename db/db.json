@@ -90,7 +90,7 @@
         "Bacon",
         "Cheddar"
       ],
-      "status": "Solicitado",
+      "status": "Em produção",
       "id": 1
     },
     {
@@ -101,7 +101,7 @@
         "Tomate",
         "Cebola roxa"
       ],
-      "status": "Solicitado",
+      "status": "Em produção",
       "id": 4
     },
     {
@@ -132,8 +132,20 @@
       "bread": "Tradicional",
       "meat": "Picanha",
       "opcionais": [],
-      "status": "Solicitado",
+      "status": "Finalizado",
       "id": 7
+    },
+    {
+      "name": "Daniel",
+      "bread": "Tradicional",
+      "meat": "Alcatra",
+      "opcionais": [
+        "Salame",
+        "Tomate",
+        "Cebola roxa"
+      ],
+      "status": "Em produção",
+      "id": 8
     }
   ]
 }
