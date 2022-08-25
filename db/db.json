@@ -117,17 +117,6 @@
       "id": 5
     },
     {
-      "name": "Patricio",
-      "bread": "Tradicional",
-      "meat": "Alcatra",
-      "opcionais": [
-        "Bacon",
-        "Tomate"
-      ],
-      "status": "Solicitado",
-      "id": 6
-    },
-    {
       "name": "Hary",
       "bread": "Tradicional",
       "meat": "Picanha",
@@ -146,6 +135,18 @@
       ],
       "status": "Em produção",
       "id": 8
+    },
+    {
+      "name": "Patricio",
+      "bread": "Tradicional",
+      "meat": "Alcatra",
+      "opcionais": [
+        "Salame",
+        "Cebola roxa",
+        "Tomate"
+      ],
+      "status": "Finalizado",
+      "id": 9
     }
   ]
 }

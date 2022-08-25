@@ -8,6 +8,7 @@
   </div>
 </template>
 
+
 <script>
 import Banner from '@/components/Banner.vue';
 import BurgerForm from '@/components/BurgerForm.vue';
