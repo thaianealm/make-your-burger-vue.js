@@ -16,11 +16,13 @@ Métodos
 
 Reutilização de layout
 
+CSS global e CSS scoped
+
 Componentização
  
 Criação de API com JSON server
 
- Integração com o back-end
+Integração com o back-end
 
 #
 
